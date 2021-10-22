@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-rrkwzi=_si-2ev8bm_^#of(0g#_%&p&-1k_hy)2!q)%v*sqx+9
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+# AUTH_USER_MODEL = 'User.MyUser'
 
 # Application definition
 
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'User'
+    # 'User'
 ]
 
 MIDDLEWARE = [
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'TestProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'test',
+        'USER': 'root',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
